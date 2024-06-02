@@ -15,11 +15,11 @@ jobs:
       - name: Check for updates
         id: check-updates
         run: |
+          cd MuteActiveWindow-Lite
           current_hash=$(sha256sum maw-muter.ahk | awk '{print $1}')
           remote_hash=$(curl -sL https://raw.githubusercontent.com/tfurci/maw-muter/main/maw-muter_AHK/maw-muter.ahk | sha256sum | awk '{print $1}')
           if [ "$current_hash" != "$remote_hash" ]; then
             echo "Updating maw-muter.ahk..."
-            cd MuteActiveWindow-Lite
             curl -sLO https://raw.githubusercontent.com/tfurci/maw-muter/main/maw-muter_AHK/maw-muter.ahk
             git config user.email "github-actions@github.com"
             git config user.name "GitHub Actions"
