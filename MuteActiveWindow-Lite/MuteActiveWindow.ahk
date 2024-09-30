@@ -1,6 +1,7 @@
 #Include %A_ScriptDir%\maw-muter.ahk
 #Persistent
 #SingleInstance Force
+#UseHook
 SetTitleMatchMode, 2
 
 ; Get the directory of the AutoHotkey script for svcl to work
